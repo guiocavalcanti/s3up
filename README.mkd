@@ -1,0 +1,41 @@
+## S3 Client
+
+Use this S3 client if you need to upload files to Amazon S3 through terminal.
+
+## Quickstart
+
+**Requirements**
+
+- Ruby 1.9.2
+- Bundler
+
+### Setting up
+
+```sh
+$ > git clone git@github.com:guiocavalcanti/s3up.git
+$ > cd s3up
+$ > bundle
+```
+
+### Configure
+
+Create a file named config.yml in the samples directory as follows:
+
+```yaml
+access_key_id: REPLACE_WITH_ACCESS_KEY_ID
+secret_access_key: REPLACE_WITH_SECRET_ACCESS_KEY
+```
+
+### Running
+
+```sh
+$ > ruby s3up.rb bucketname *.swf
+# Uploading files/a1.swf
+# Uploading files/a2.swf
+# Uploading files/outro.swf
+#       urls = { 'a1.swf' : 'https://newbucketsdsds.s3.amazonaws.com/a1.swf'},{ 'a2.swf' : 'https://newbucketsdsds.s3.amazonaws.com/a2.swf'},{ 'outro.swf' : 'https://newbucketsdsds.s3.amazonaws.com/outro.swf'}
+```
+
+All the files ending with .swf in the current dir will be uploaded as public files on ``bucketname`` s3 bucket.
+
+
