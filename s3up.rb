@@ -9,7 +9,7 @@ class S3Up
     @files = args
     @printer = Proc.new do |list|
       <<-eos
-      urls = #{ list.collect { |(name, link)| "{ '#{name}' : '#{link}'}" }.join(',') }
+      urls = { #{ list.collect { |(name, link)| " '#{name}' : '#{link}' " }.join(',') } }
       eos
     end
 
